@@ -1,0 +1,49 @@
+<div>
+    <div class="container" id="stu_info">
+        <br>
+        <div style="display: inline-flex;">
+            <h3>Student Details</h3>
+            <a href="{% url 'show_students' %}">
+                Back
+            </a>
+            <br>
+            <a href="{% url 'parent_detail' info.id %}">
+                View parent details
+            </a>                
+        </div>
+        
+        <hr>
+        <h5>Student Name: {{info.first_name}} {{info.last_name}}</h5>
+        <br>
+        <p>
+            <div>
+                <label for="">Username:</label>
+                {{info.username}}
+            </div>
+            <div>
+                <label for="">Phone Number:</label>
+                {{info.ph_no}}
+            </div>
+            <div>
+                <label for="">Date of joining:</label>
+                {{info.date_joined}}
+            </div>
+            <div>
+                <label for="">Date of Leaving:</label>
+                {% if info.leaving_date %}
+                  {{info.leaving_date}}
+                {% else %}
+                    Leaving Date Not Given
+                {% endif %}
+            </div>
+            <div>
+                <label>course:</label>
+                {{info.course}}
+            </div>    
+        </p>
+        <a href="{% url 'edit_details' info.id %}" class="btn btn-outline-info">Edit Details</a>
+        <hr>
+        <h4>Exams</h4>
+        <a href="{% url 'add_exam' info.id %}">Add_Exams</a>
+    </div>
+</div>

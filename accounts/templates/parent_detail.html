@@ -1,0 +1,11 @@
+{% block content %}
+<a href="{% url 'edit_parent_details' student.id %}">Add parent details</a>
+  <h1>{{ student.name }}</h1>
+  <p>Father's Name: {{ student.parent.father_name }}</p>
+  <p>Mother's Name: {{ student.parent.mother_name }}</p>
+  <p>Guardian's Name: {{ student.parent.guardian_name }}</p>
+  <p>Phone Number 1: {{ student.parent.ph1 }}</p>
+  <p>Phone Number 2: {{ student.parent.ph2 }}</p>
+  <p>Email 1: {{ student.parent.mail1 }}</p>
+  <p>Email 2: {{ student.parent.mail2 }}</p>
+{% endblock %}
